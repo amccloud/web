@@ -2,9 +2,11 @@
   "version": 2,
   "name": "amccloud",
   "alias": "next.amccloud.com",
-  "env": {
-    "CONTENTFUL_HOST": "preview.contentful.com",
-    "CONTENTFUL_ACCESS_TOKEN": "@amccloud-contentful-access-token",
-    "CONTENTFUL_SPACE_ID": "@amccloud-contentful-space-id"
+  "build": {
+    "env": {
+      "CONTENTFUL_HOST": "preview.contentful.com",
+      "CONTENTFUL_ACCESS_TOKEN": "@amccloud-contentful-access-token",
+      "CONTENTFUL_SPACE_ID": "@amccloud-contentful-space-id"
+    }
   }
 }
