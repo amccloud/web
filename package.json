@@ -1,6 +1,6 @@
 {
   "name": "amccloud-web",
-  "description": "amccloud.com",
+  "description": "https://amccloud.com",
   "version": "1.0.0",
   "author": "Andrew McCloud <andrew@amccloud.com>",
   "bugs": {
@@ -34,7 +34,7 @@
     "yargs-parser": "^13.0.0"
   },
   "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
-  "keywords": ["gatsby", "contentful"],
+  "keywords": [],
   "license": "MIT",
   "main": "n/a",
   "repository": {
