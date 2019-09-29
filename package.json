@@ -53,7 +53,6 @@
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "start": "npm run develop",
-    "heroku-postbuild": "gatsby build",
     "cleanup-repository": "rimraf bin contentful && yarn remove contentful-import chalk inquirer rimraf "
   }
 }
