@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
@@ -10,6 +11,7 @@ import heroStyles from '../components/hero.module.css'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
+    const mdx = get(this.props, 'data.mdx')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
@@ -28,11 +30,7 @@ class BlogPostTemplate extends React.Component {
             >
               {post.publishDate}
             </p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
-              }}
-            />
+            {mdx.body && <MDXRenderer>{mdx.body}</MDXRenderer>}
           </div>
         </div>
       </Layout>
@@ -57,11 +55,9 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
-      body {
-        childMarkdownRemark {
-          html
-        }
-      }
+    }
+    mdx(fields: { slug: { eq: $slug }, type: { eq: "contentfulBlogPostBodyTextNode" } }) {
+      body
     }
   }
 `
